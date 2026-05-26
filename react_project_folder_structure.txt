@@ -1,0 +1,373 @@
+skill-bridge-lms/
+│
+├── .github/
+│   └── workflows/
+│       ├── develop.yml
+│       ├── staging.yml
+│       └── staging-deploy.yml
+│
+├── public/
+│   ├── images/
+│   ├── certificates/
+│   ├── otp/
+│   ├── templates/
+│   └── question-template.xlsx
+│
+├── src/
+│
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── project structure.txt
+│
+│
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── illustrations/
+│   │   ├── logos/
+│   │   └── styles/
+│   │
+│
+│   ├── routes/
+│   │   └── index.jsx
+│   │
+│   │   Purpose:
+│   │   - Central route management
+│   │   - Lazy loading pages
+│   │   - Role-based route protection
+│   │   - Admin/Trainer/User layouts
+│   │
+│
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   ├── ThemeContext.jsx
+│   │   ├── NetworkContext.jsx
+│   │   ├── SettingsContext.jsx
+│   │   ├── TranslationContext.jsx
+│   │   └── CardPreferenceContext.jsx
+│   │
+│   │   Purpose:
+│   │   - Global app state
+│   │   - Authentication
+│   │   - Theme
+│   │   - Language
+│   │   - Preferences
+│   │   - Network handling
+│   │
+│
+│   ├── layouts/
+│   │   ├── AdminLayout.jsx
+│   │   ├── TrainerLayout.jsx
+│   │   └── UserLayout.jsx
+│   │
+│   │   Purpose:
+│   │   - Shared page chrome
+│   │   - Navbar
+│   │   - Sidebar
+│   │   - Content outlet
+│   │
+│
+│   ├── hooks/
+│   │   ├── use-mobile.jsx
+│   │   ├── useAdminAnalytics.js
+│   │   ├── useTrainerAnalytics.js
+│   │   └── useUserAnalytics.js
+│   │
+│   │   Purpose:
+│   │   - Reusable custom React hooks
+│   │   - Analytics abstraction
+│   │   - Responsive utilities
+│   │
+│
+│   ├── lib/
+│   │   └── utils.js
+│   │
+│   │   Purpose:
+│   │   - Shared utility helpers
+│   │   - Tailwind class merging
+│   │
+│
+│   ├── utils/
+│   │   ├── api.js
+│   │   ├── authEvents.js
+│   │   ├── persistAuth.js
+│   │   ├── catchErrorFormatter.js
+│   │   ├── helpers.js
+│   │   ├── formWrapper.jsx
+│   │   ├── generateCertificateHTML.js
+│   │   ├── normalizeQuestion.js
+│   │   ├── optionUtils.js
+│   │   ├── mockOfferHierarchyAPI.js
+│   │   │
+│   │   ├── bulkUpload/
+│   │   │   ├── parser.js
+│   │   │   ├── mapper.js
+│   │   │   ├── validator.js
+│   │   │   └── template.js
+│   │   │
+│   │   ├── mappers/
+│   │   │   └── offerHierarchy.mapper.js
+│   │   │
+│   │   └── validators/
+│   │       └── questionValidator.js
+│   │
+│   │   Purpose:
+│   │   - API communication
+│   │   - Token handling
+│   │   - Validation
+│   │   - Mapping
+│   │   - Error formatting
+│   │   - Helper functions
+│   │
+│
+│   ├── data/
+│   │   ├── mock-certificates.js
+│   │   ├── mock-content-hub.js
+│   │   ├── sampleLmsData.js
+│   │   └── sampleUsersData.jsx
+│   │
+│   │   Purpose:
+│   │   - Mock/demo data
+│   │   - Development fallback
+│   │
+│
+│   ├── scorm/
+│   │   └── scormBridge.js
+│   │
+│   │   Purpose:
+│   │   - SCORM 1.2 / 2004 integration
+│   │   - LMS runtime communication
+│   │
+│
+│   ├── components/
+│   │
+│   │   ├── ui/
+│   │   │   ├── Button.jsx
+│   │   │   ├── dialog.jsx
+│   │   │   ├── drawer.jsx
+│   │   │   ├── dropdown-menu.jsx
+│   │   │   ├── select.jsx
+│   │   │   ├── tabs.jsx
+│   │   │   ├── table.jsx
+│   │   │   ├── input.jsx
+│   │   │   ├── textarea.jsx
+│   │   │   ├── checkbox.jsx
+│   │   │   ├── switch.jsx
+│   │   │   ├── badge.jsx
+│   │   │   ├── tooltip.jsx
+│   │   │   ├── popover.jsx
+│   │   │   ├── calendar.jsx
+│   │   │   ├── accordion.jsx
+│   │   │   ├── avatar.jsx
+│   │   │   ├── progress.jsx
+│   │   │   ├── separator.jsx
+│   │   │   ├── command.jsx
+│   │   │   ├── multiSelect.jsx
+│   │   │   ├── scroll-area.jsx
+│   │   │   ├── statusBadge.jsx
+│   │   │   ├── sonner.jsx
+│   │   │   └── ...
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Shared reusable UI primitives
+│   │   │   - Mostly shadcn/Radix wrappers
+│   │   │
+│   │
+│   │   ├── Common/
+│   │   │   ├── Navbar/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── KpiCard.jsx
+│   │   │   ├── KpiGrid.jsx
+│   │   │   ├── NotificationsBell.jsx
+│   │   │   ├── NotificationsHub.jsx
+│   │   │   ├── NotificationsList.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   ├── PageLoader.jsx
+│   │   │   ├── PeriodFilter.jsx
+│   │   │   ├── ScrollToTop.jsx
+│   │   │   ├── SplitButtonInline.jsx
+│   │   │   └── CardPreference.jsx
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Shared components across all roles
+│   │   │
+│   │
+│   │   ├── Auth/
+│   │   │   ├── LoginForm.jsx
+│   │   │   ├── SignupForm.jsx
+│   │   │   ├── ForgotPasswordForm.jsx
+│   │   │   ├── ResetPasswordForm.jsx
+│   │   │   └── LoginWithOtp.jsx
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Authentication forms
+│   │   │
+│   │
+│   │   ├── Shared/
+│   │   │   └── roleSwitcherAccordion.jsx
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Shared multi-role functionality
+│   │   │
+│   │
+│   │   ├── error-boundary/
+│   │   │   ├── ErrorBoundary.jsx
+│   │   │   ├── GlobalErrorBoundary.jsx
+│   │   │   ├── GlobalErrorFallback.jsx
+│   │   │   ├── RouteErrorBoundary.jsx
+│   │   │   ├── RouteErrorFallback.jsx
+│   │   │   └── index.jsx
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Crash protection
+│   │   │   - Route fallback UI
+│   │   │
+│   │
+│   │   ├── networkError/
+│   │   │   ├── NetworkError.jsx
+│   │   │   ├── OfflineCard.jsx
+│   │   │   ├── ServerError.jsx
+│   │   │   ├── SessionExpiredModal.jsx
+│   │   │   └── TimeOutCard.jsx
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Network failure handling
+│   │   │
+│   │
+│   │   ├── Admin/
+│   │   │   ├── Navbar/
+│   │   │   ├── Sidebar/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Common/
+│   │   │   ├── GroupMaster/
+│   │   │   ├── PopupComponents/
+│   │   │   ├── Trainings/
+│   │   │   ├── certificates/
+│   │   │   ├── questions/
+│   │   │   ├── feedback/
+│   │   │   ├── content-hub/
+│   │   │   ├── content-hub-new/
+│   │   │   └── content-hub-old/
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Admin-specific business modules
+│   │   │
+│   │
+│   │   ├── Trainer/
+│   │   │   ├── Navbar/
+│   │   │   ├── Sidebar/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Assessment/
+│   │   │   ├── ContentHub/
+│   │   │   ├── EventCalendar/
+│   │   │   ├── GroupMaster/
+│   │   │   ├── Reports/
+│   │   │   ├── Users/
+│   │   │   ├── groups/
+│   │   │   ├── feedback/
+│   │   │   ├── courses/
+│   │   │   └── CertificationBadges/
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Trainer-specific modules
+│   │   │
+│   │
+│   │   └── User/
+│   │       ├── Navbar/
+│   │       ├── Sidebar/
+│   │       ├── Dashboard/
+│   │       ├── Assessments/
+│   │       ├── Certificates/
+│   │       ├── Course/
+│   │       ├── Events/
+│   │       ├── Profile/
+│   │       ├── Security/
+│   │       ├── Support/
+│   │       ├── Trainings/
+│   │       └── Analytics/
+│   │
+│   │       Purpose:
+│   │       - Learner-facing modules
+│   │
+│
+│   ├── pages/
+│   │
+│   │   ├── Login.jsx
+│   │   ├── Signup.jsx
+│   │   ├── ForgotPassword.jsx
+│   │   ├── ResetPassword.jsx
+│   │
+│   │
+│   │   ├── Admin/
+│   │   │   ├── Dashboard/
+│   │   │   ├── UserManagement/
+│   │   │   ├── ContentHub/
+│   │   │   ├── ContentHub-new/
+│   │   │   ├── ContentHub-old/
+│   │   │   ├── AssessmentsHub/
+│   │   │   ├── Master/
+│   │   │   ├── Preferences/
+│   │   │   ├── Notifications/
+│   │   │   ├── FeedbackManagement/
+│   │   │   ├── Event&Certification/
+│   │   │   └── legacy pages...
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Admin route screens
+│   │   │
+│   │
+│   │   ├── Trainer/
+│   │   │   ├── Dashboard/
+│   │   │   ├── TrainigManagement/
+│   │   │   ├── Courses/
+│   │   │   ├── Assessments/
+│   │   │   ├── ContantManagement/
+│   │   │   ├── Events&Attendance/
+│   │   │   ├── Feedback&Certificates/
+│   │   │   ├── Notifications/
+│   │   │   ├── Settings/
+│   │   │   └── legacy pages...
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Trainer route screens
+│   │   │
+│   │
+│   │   ├── User/
+│   │   │   ├── Dashboard/
+│   │   │   ├── MyTrainings/
+│   │   │   ├── CourseLibrary/
+│   │   │   ├── Assessments/
+│   │   │   ├── Certificates/
+│   │   │   ├── Events/
+│   │   │   ├── Feedback/
+│   │   │   ├── Notifications/
+│   │   │   ├── Profile/
+│   │   │   ├── Library/
+│   │   │   └── support/security pages...
+│   │   │
+│   │   │   Purpose:
+│   │   │   - Learner route screens
+│   │   │
+│   │
+│   │   └── ExternalUser/
+│   │       ├── Login.jsx
+│   │       ├── AssessmentFlow.jsx
+│   │       ├── ProfileForm.jsx
+│   │       ├── Results.jsx
+│   │       ├── ResultBanner.jsx
+│   │       └── Header.jsx
+│   │
+│   │       Purpose:
+│   │       - Public guest assessment flow
+│   │
+│
+│   └── scorm/
+│       └── scormBridge.js
+│
+│
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+├── docker-compose.yaml
+└── README.md
